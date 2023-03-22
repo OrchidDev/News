@@ -183,6 +183,12 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         /*
+         * Modules Service Providers...
+         */
+
+        OrchidDev\Home\Providers\HomeServiceProvider::class,
+
+        /*
          * Package Service Providers...
          */
 
