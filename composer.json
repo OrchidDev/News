@@ -25,7 +25,9 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/",
-            "OrchidDev\\Home\\": "Modules/OrchidDev/Home/"
+            "OrchidDev\\Home\\": "Modules/OrchidDev/Home/",
+            "OrchidDev\\User\\": "Modules/OrchidDev/User/",
+            "OrchidDev\\Auth\\": "Modules/OrchidDev/Auth/"
         }
     },
     "autoload-dev": {

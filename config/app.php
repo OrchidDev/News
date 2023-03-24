@@ -187,6 +187,8 @@ return [
          */
 
         OrchidDev\Home\Providers\HomeServiceProvider::class,
+        OrchidDev\User\Providers\UserServiceProvider::class,
+        OrchidDev\Auth\Providers\AuthServiceProvider::class,
 
         /*
          * Package Service Providers...
