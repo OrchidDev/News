@@ -22,7 +22,8 @@ class LoginReguest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'email' => 'required|string|min:3|max:225|exists:users,email',
+            'password' => 'required|string|min:8|max:225',
         ];
     }
 }
