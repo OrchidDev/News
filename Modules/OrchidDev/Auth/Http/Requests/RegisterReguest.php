@@ -23,7 +23,7 @@ class RegisterReguest extends FormRequest
     {
         return [
             'name' => 'required|string|min:3|max:225',
-            'email' => 'required|email|min:3|max:225|unique:users, email',
+            'email' => 'required|email|min:3|max:225|unique:users,email',
             'password' => 'required|string|min:3|max:225',
             'privacy' => 'required',
         ];
