@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use OrchidDev\Auth\Http\Controllers\LoginControllter;
 use OrchidDev\Auth\Http\Controllers\RegisterControllter;
+use OrchidDev\Auth\Http\Controllers\ResetController;
 use OrchidDev\Auth\Http\Controllers\VerifyController;
 
 Route::group([], function ($router){
@@ -22,5 +23,10 @@ Route::group([], function ($router){
     $router->get('/email/verify', [VerifyController::class, 'view'])->name('auth.verify.email')->middleware('auth');
     $router->get('/email/verify/{id}/{hash}', [VerifyController::class, 'verify'])->name('verification.verify')->middleware(['auth', 'signed']);
     $router->post('/email/verify/resend', [VerifyController::class, 'resend'])->name('verify.resend')->middleware(['auth', 'throttle:5,1']);
+
+    // بازیابی رمز عبور
+
+    $router->get('password/reset', [ResetController::class, 'view'])->name('auth.password.reset')->middleware('guest');
+    $router->post('password/send-email', [ResetController::class, 'sendEmail'])->name('password.reset')->middleware('guest');
 });
 
