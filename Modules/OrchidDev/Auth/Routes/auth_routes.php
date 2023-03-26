@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use OrchidDev\Auth\Http\Controllers\LoginControllter;
 use OrchidDev\Auth\Http\Controllers\RegisterControllter;
+use OrchidDev\Auth\Http\Controllers\VerifyController;
 
 Route::group([], function ($router){
 
@@ -16,4 +17,10 @@ Route::group([], function ($router){
     $router->get('login', [LoginControllter::class, 'view'])->name('auth.login');
     $router->post('login', [LoginControllter::class, 'login'])->name('auth.login.store');
 
+    // تایید ایمیل
+
+    $router->get('/email/verify', [VerifyController::class, 'view'])->name('auth.verify.email')->middleware('auth');
+    $router->get('/email/verify/{id}/{hash}', [VerifyController::class, 'verify'])->name('verification.verify')->middleware(['auth', 'signed']);
+    $router->post('/email/verify/resend', [VerifyController::class, 'resend'])->name('verify.resend')->middleware(['auth', 'throttle:5,1']);
 });
+

@@ -8,6 +8,7 @@
         @include('Home::section.style')
     </head>
     <body>
+        @yield('content')
         @include('Home::section.javascript')
     </body>
 </html>
