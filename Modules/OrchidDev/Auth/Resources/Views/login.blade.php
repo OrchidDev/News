@@ -38,7 +38,7 @@
         <div class="text-center mt-3">
             ثبت نام کردید؟ <a href="{{ route('auth.register') }}" class="fw-bolder text-dark text-decoration-none">عضو شوید</a>
             <br>
-            رمز عبور خود را فراموش کرده ید؟ <a href="{{ route('auth.password.reset') }}" class="fw-bolder text-dark text-decoration-none">بازیابی رمز عبور</a>
+            رمز عبور خود را فراموش کرده ید؟ <a href="{{ route('auth.password.email') }}" class="fw-bolder text-dark text-decoration-none">بازیابی رمز عبور</a>
         </div>
     </div>
 </div>

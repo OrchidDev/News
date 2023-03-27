@@ -26,7 +26,7 @@
                     <p>ایمیل خود را وارد کنید. ما پیوند بازنشانی رمز عبور را برای شما ارسال می کنیم.</p>
                 </div>
                 <div class="p-3">
-                    <form action="{{ route('password.reset') }}" method="POST">
+                    <form action="{{ route('auth.password.send.email') }}" method="POST">
                         @csrf
                         <label for="reset" class="mb-2">ایمیل</label>
                         <input type="email" class="form-control mb-3" id="reset" name="email" placeholder="ایمیل خود را وارد کنید">

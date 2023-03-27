@@ -26,7 +26,10 @@ Route::group([], function ($router){
 
     // بازیابی رمز عبور
 
-    $router->get('password/reset', [ResetController::class, 'view'])->name('auth.password.reset')->middleware('guest');
-    $router->post('password/send-email', [ResetController::class, 'sendEmail'])->name('password.reset')->middleware('guest');
+    $router->get('password/email', [ResetController::class, 'view'])->name('auth.password.email')->middleware('guest');
+    $router->post('password/send-email', [ResetController::class, 'sendEmail'])->name('auth.password.send.email')->middleware('guest');
+    $router->get('password/reset', [ResetController::class, 'reset'])->name('password.reset')->middleware('guest');
+    $router->post('password/reset', [ResetController::class, 'update'])->name('password.update')->middleware('guest');
+
 });
 
